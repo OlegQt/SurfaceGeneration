@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SurfaceGeneration</string>
+    <string name="surfApp">SurfApp</string>
 </resources>
