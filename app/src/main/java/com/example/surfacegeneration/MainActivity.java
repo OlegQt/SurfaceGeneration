@@ -10,6 +10,7 @@ import com.example.surfacegeneration.UI.MySV;
 
 public class MainActivity extends AppCompatActivity {
     protected TextView txtInfo;
+    protected MySV gameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +22,20 @@ public class MainActivity extends AppCompatActivity {
         String strInfo = "Surface application \n created successfully";
         txtInfo.setText(strInfo);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        MySV gameView = new MySV(this);
+        gameView = new MySV(this);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.gameView.resume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.gameView.pause();
+    }
 }
